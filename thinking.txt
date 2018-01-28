@@ -1,0 +1,4 @@
+1.12.2018 {
+  So I guess this can just be a file for messing around with js stuff
+  becasue I already have the repo and yadayada
+}
