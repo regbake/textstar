@@ -3,19 +3,14 @@
   <head>
   </head>
   <body>
-    <form>
-      <input type="file" id="files" name="files[]" multiple>
-      <output id="list"></output>
-
+    <!-- file submit -->
+    <form enctype="multipart/form-data" action="/" method="post" class="input-form">
+      <input type="file" name="files" multiple>
+      <button type="submit" class="btn btn-success">Submit File</button>
     </form>
 
     <script>
-      document.getElementById("files").addEventListener("change", handleFileSelect, false);
 
-      function handleFileSelect(event){
-        var files = event.target.files;
-        console.log(files);
-      }
     </script>
   </body>
 </html>
