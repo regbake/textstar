@@ -9,6 +9,10 @@
       <button type="submit" class="btn btn-success">Submit File</button>
     </form>
 
+    <% files.forEach(function(file){ %>
+      <h1>  <%- file.buffer %> </h1>
+    <% }); %>
+
     <script>
 
     </script>

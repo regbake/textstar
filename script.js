@@ -13,14 +13,18 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/", function(req, res){
-  res.render("index");
+  res.render("index", {
+    files: []
+  });
 });
 
 app.post("/", upload.any("files"), function(req, res){
   // console.log(req.file.buffer.toString("utf8"));
-  var files = req.files; 
+  var files = req.files;
 
-  res.render("index");
+  res.render("index", {
+    files: files
+  });
 })
 
 app.listen(3000, function(){
