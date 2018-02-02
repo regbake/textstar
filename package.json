@@ -1,0 +1,22 @@
+{
+  "name": "textstar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regbake/textstar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/regbake/textstar/issues"
+  },
+  "homepage": "https://github.com/regbake/textstar#readme",
+  "dependencies": {
+    "ejs": "^2.5.7"
+  }
+}
