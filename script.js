@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
+const TextFunctions = require("./scripts/TextFunctions.js").test;
 
 //multer shiz
 var multer = require("multer");
@@ -13,6 +14,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/", function(req, res){
+  TextFunctions(); 
   res.render("index", {
     files: []
   });
