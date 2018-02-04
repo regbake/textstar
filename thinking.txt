@@ -7,5 +7,11 @@
   Cool, I'm glad to be working on this stuff again, not going into too much
   on that front, though.
 
-  What to do with the files upon upload? 
+  What to do with the files upon upload?
+
+  Put all files into a big vat of words...
+
+  Input is an array and I want to put all of those into one long...
+
+  Filter out most common words... 
 }

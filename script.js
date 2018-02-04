@@ -20,21 +20,19 @@ app.get("/", function(req, res){
 });
 
 app.post("/", upload.any("files"), function(req, res){
-  // console.log(req.files[0].buffer.toString("utf8"));
   var fileArray = [];
   var files = req.files; //an array of file Objects if multiple uploaded
+  var allFileString;
 
   if (files.length > 1){
     req.files.forEach(function(file){
         let entry = file.buffer.toString("utf8");
-        fileArray.push(entry);
+        fileArray.push(entry); //put each file into array
+        allFileString += entry; // concat each file into string
     });
   }
 
-  console.log(fileArray);
-
   res.render("index", {
-    // files: files
     files: []
   });
 })

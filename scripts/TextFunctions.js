@@ -11,6 +11,31 @@ module.exports = {
       wordCount["_" + words[i]] = (wordCount["_" + words[i]] || 0) + 1;
     }
 
-    return wordCount; 
+    return wordCount;
+  },
+
+  consolidateTextArray: function(array){
+
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fin
