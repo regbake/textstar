@@ -27,6 +27,31 @@ module.exports = {
     wordFrequencyArray = wordFrequencyArray.reverse();
 
     return wordFrequencyArray;
+  },
+
+  cleanArray: function(array){
+    //removes punctiation and filler words
+    var cleanArray = [];
+
+    array.forEach(function(pair){
+      var word = pair[0];
+      word = word.toLowerCase().split(""); //make the word lowercase
+
+      if (word.length > 0){
+        for (var i=0; i<word.length; i++){ //remove punctuation
+          if (word[i] === "\'") {
+            //catch words with apostrophe
+          } else if (word[i] === "!" || word[i] === "," || word[i] === "?"){
+            word.splice(i, 1);
+          }
+        }
+        pair[0] = word.join("");
+        cleanArray.push(pair);
+      }
+      // cleanArray.push(pair);
+    });
+
+    return cleanArray;
   }
 }
 

@@ -37,7 +37,10 @@ app.post("/", upload.any("files"), function(req, res){
   var files = req.files; //an array of file Objects if multiple uploaded
 
   if (files.length > 1){
-    TextFunctions.fileArrayToFrequencyArray(files);
+    let sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files);
+    let cleanArray = TextFunctions.cleanArray(sortedFrequencyArray);
+
+    console.log(cleanArray);
   }
 
   res.render("index", {

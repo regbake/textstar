@@ -23,3 +23,10 @@
 
   worry about module refactoring later
 }
+
+2.4.2018 {
+  All strings to lower case
+  Words/characters to remove:
+    [" ", "i", "the", "to", "and", "of", "a", "that", "\", ",", "!", "i'm", "just", "what"] +
+    ["my", "in", "this", "is", "have", "on", "be", "at", "but"]
+}
