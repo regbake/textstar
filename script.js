@@ -13,6 +13,19 @@ var upload = multer({storage: storage});
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 
+//define Object.entries
+if (!Object.entries)
+  Object.entries = function( obj ){
+    var ownProps = Object.keys( obj ),
+        i = ownProps.length,
+        resArray = new Array(i); // preallocate the Array
+    while (i--)
+      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+    return resArray;
+  };
+
+//routes
 app.get("/", function(req, res){
   res.render("index", {
     files: []
@@ -22,7 +35,8 @@ app.get("/", function(req, res){
 app.post("/", upload.any("files"), function(req, res){
   var fileArray = [];
   var files = req.files; //an array of file Objects if multiple uploaded
-  var allFileString;
+  var allFileString, wordFrequencyObject, wordFrequencyArray;
+  var obj = {1: "hey", 2: "sup"};
 
   if (files.length > 1){
     req.files.forEach(function(file){
@@ -31,6 +45,11 @@ app.post("/", upload.any("files"), function(req, res){
         allFileString += entry; // concat each file into string
     });
   }
+
+  wordFrequencyObject = TextFunctions.countWords(allFileString);
+  wordFrequencyArray = Object.entries(wordFrequencyObject);
+
+  console.log(wordFrequencyArray);
 
   res.render("index", {
     files: []

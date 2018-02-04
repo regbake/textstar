@@ -8,7 +8,7 @@ module.exports = {
     var words = string.split(/\s/);
 
     for (let i=0; i<words.length; i++){
-      wordCount["_" + words[i]] = (wordCount["_" + words[i]] || 0) + 1;
+      wordCount[words[i]] = (wordCount[words[i]] || 0) + 1;
     }
 
     return wordCount;
