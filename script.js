@@ -47,23 +47,14 @@ app.post("/", upload.any("files"), function(req, res){
   }
 
   wordFrequencyObject = TextFunctions.countWords(allFileString);
-  wordFrequencyArray = Object.entries(wordFrequencyObject);
+  wordFrequencyArray = Object.entries(wordFrequencyObject).sort(function(a,b){
+    return a[1] - b[1];
+  });
 
-  console.log(wordFrequencyArray);
+  console.log(wordFrequencyArray.reverse());
 
   //input an array of arrays
-  function sortDescend(array) {
-    var sorted = false;
-    let min, current;
 
-    while (!sorted) {
-      for (var i=0; i<array.length; i++){
-        current = array[i][1];
-
-        if ()
-      }
-    }
-  }
 
   res.render("index", {
     files: []
