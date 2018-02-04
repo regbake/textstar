@@ -35,13 +35,18 @@ module.exports = {
 
     array.forEach(function(pair){
       var word = pair[0];
+      var oWord = pair[0].toLowerCase();
       word = word.toLowerCase().split(""); //make the word lowercase
 
-      if (word.length > 0){
+      if (word.length > 0 && oWord != "i" && oWord != "the" && oWord != "to" && oWord != "and"
+            && oWord != "of" && oWord != "a" && oWord != "is" && oWord != "in" && oWord != "this"
+            && oWord != "be" && oWord != "on" && oWord != "at" && oWord != "that" && oWord != "my"
+            && oWord != "just" && oWord != "for" && oWord != "so" && oWord != "an" && oWord != "it"
+            && oWord != "as" && oWord != "me"){ //initial filter
         for (var i=0; i<word.length; i++){ //remove punctuation
           if (word[i] === "\'") {
             //catch words with apostrophe
-          } else if (word[i] === "!" || word[i] === "," || word[i] === "?"){
+          } else if (word[i] === "!" || word[i] === "," || word[i] === "?" || word[i] === "."){
             word.splice(i, 1);
           }
         }
