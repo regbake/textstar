@@ -35,26 +35,10 @@ app.get("/", function(req, res){
 app.post("/", upload.any("files"), function(req, res){
   var fileArray = [];
   var files = req.files; //an array of file Objects if multiple uploaded
-  var allFileString, wordFrequencyObject, wordFrequencyArray;
-  var obj = {1: "hey", 2: "sup"};
 
   if (files.length > 1){
-    req.files.forEach(function(file){
-        let entry = file.buffer.toString("utf8");
-        fileArray.push(entry); //put each file into array
-        allFileString += entry; // concat each file into string
-    });
+    TextFunctions.fileArrayToFrequencyArray(files);
   }
-
-  wordFrequencyObject = TextFunctions.countWords(allFileString);
-  wordFrequencyArray = Object.entries(wordFrequencyObject).sort(function(a,b){
-    return a[1] - b[1];
-  });
-
-  console.log(wordFrequencyArray.reverse());
-
-  //input an array of arrays
-
 
   res.render("index", {
     files: []

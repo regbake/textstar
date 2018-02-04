@@ -1,8 +1,4 @@
 module.exports = {
-  test: function(){
-    console.log("help world!")
-  },
-
   countWords: function(string){
     var wordCount = {};
     var words = string.split(/\s/);
@@ -14,8 +10,23 @@ module.exports = {
     return wordCount;
   },
 
-  consolidateTextArray: function(array){
+  fileArrayToFrequencyArray: function(fileArray){
+    var allFileString, wordFrequencyObject, wordFrequencyArray;
 
+    fileArray.forEach(function(file){
+        var entry = file.buffer.toString("utf8"); //convert to string for JS reading/compatibility
+        fileArray.push(entry); //put each file into array
+        allFileString += entry; // concat each file into string
+    });
+
+    wordFrequencyObject = this.countWords(allFileString);
+    wordFrequencyArray = Object.entries(wordFrequencyObject).sort(function(a,b){
+      return a[1] - b[1];
+    });
+
+    wordFrequencyArray = wordFrequencyArray.reverse();
+
+    return wordFrequencyArray;
   }
 }
 
