@@ -13,5 +13,13 @@
 
   Input is an array and I want to put all of those into one long...
 
-  Filter out most common words... 
+  Filter out most common words...
+
+  search for a word: if its in there display the frequency
+  show which files have been uploaded, select a file to perform operations on,
+  slice out punctuation characters, all lower case it
+  sort descending by freq. and be able to choose how many top words,
+  filter out transition words
+
+  worry about module refactoring later
 }

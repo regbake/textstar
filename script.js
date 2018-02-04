@@ -51,6 +51,20 @@ app.post("/", upload.any("files"), function(req, res){
 
   console.log(wordFrequencyArray);
 
+  //input an array of arrays
+  function sortDescend(array) {
+    var sorted = false;
+    let min, current;
+
+    while (!sorted) {
+      for (var i=0; i<array.length; i++){
+        current = array[i][1];
+
+        if ()
+      }
+    }
+  }
+
   res.render("index", {
     files: []
   });
