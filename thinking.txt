@@ -2,3 +2,10 @@
   So I guess this can just be a file for messing around with js stuff
   becasue I already have the repo and yadayada
 }
+
+2.3.2018 {
+  Cool, I'm glad to be working on this stuff again, not going into too much
+  on that front, though.
+
+  What to do with the files upon upload? 
+}
