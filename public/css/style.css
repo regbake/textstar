@@ -1,3 +1,41 @@
 body {
-  background-color: cornflowerblue;
+  margin: 0;
+  padding: 0;
+  background-color: #cadcf9;
 }
+
+/*Start header*/
+  .header {
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 8%;
+    /*position: fixed;*/
+  }
+
+  .header-inner {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+  }
+/*End header*/
+
+/*Begin content*/
+  .content {
+    /*border: solid black 1px;*/
+  }
+
+  .input-form {
+    text-align: center;
+  }
+
+  .file-results {
+    width: 25%;
+    margin: 0 auto;
+    background-color: lightblue;
+  }
+
+  .display-text {
+    text-align: center;
+  }
+/*End content*/

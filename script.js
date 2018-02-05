@@ -40,8 +40,11 @@ app.post("/", upload.any("files"), function(req, res){
   var fileNameArray = TextFunctions.fileNameArray(req.files);
 
   if (files.length > 1){
-    let sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files);
-    let cleanArray = TextFunctions.cleanArray(sortedFrequencyArray);
+    var sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
+    var cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
+
+    // console.log(cleanArray);
+    console.log(sortedFrequencyArray);
   }
 
   res.render("index", {

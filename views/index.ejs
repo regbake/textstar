@@ -8,18 +8,28 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
-    <!-- file submit -->
-    <div class="input-form">
-      <form enctype="multipart/form-data" action="/" method="post">
-        <input type="file" name="files" multiple>
-        <button type="submit" class="btn btn-success">Submit File</button>
-      </form>
+    <div class="header">
+      <div class="header-inner">
+        <!-- <h1 class="content">Texstuff</h1> -->
+      </div>
+    </div>
+    <div class="content">
+      <div class="input-form">
+        <!-- file submit -->
+        <form enctype="multipart/form-data" action="/" method="post">
+          <input type="file" name="files" multiple>
+          <button type="submit" class="btn btn-success">Submit File</button>
+        </form>
+      </div>
+
+      <div class="file-results">
+        <h1 class="display-text">Uploaded files...</h1>
+        <% fileArray.forEach(function(file){ %>
+          <h2 class="display-text"> <%- file %> </h2>
+        <% }); %>
+      </div>
     </div>
 
-    <h1>Uploaded files...</h1>
-    <% fileArray.forEach(function(file){ %>
-      <h2> <%- file %> </h2>
-    <% }); %>
 
     <script>
 
