@@ -1,4 +1,14 @@
 module.exports = {
+  fileNameArray: function(files){
+    var array = [];
+    
+    files.forEach(function(file){
+      array.push(file.originalname);
+    });
+
+    return array;
+  },
+
   countWords: function(string){
     var wordCount = {};
     var words = string.split(/\s/);

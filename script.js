@@ -12,9 +12,10 @@ var upload = multer({storage: storage});
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(__dirname + '/public/')); //for styling
 
 //define Object.entries
-if (!Object.entries)
+if (!Object.entries){
   Object.entries = function( obj ){
     var ownProps = Object.keys( obj ),
         i = ownProps.length,
@@ -24,27 +25,27 @@ if (!Object.entries)
 
     return resArray;
   };
+}
 
 //routes
 app.get("/", function(req, res){
   res.render("index", {
-    files: []
+    fileArray: []
   });
 });
 
 app.post("/", upload.any("files"), function(req, res){
   var fileArray = [];
   var files = req.files; //an array of file Objects if multiple uploaded
+  var fileNameArray = TextFunctions.fileNameArray(req.files);
 
   if (files.length > 1){
     let sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files);
     let cleanArray = TextFunctions.cleanArray(sortedFrequencyArray);
-
-    console.log(cleanArray);
   }
 
   res.render("index", {
-    files: []
+    fileArray: fileNameArray
   });
 })
 
