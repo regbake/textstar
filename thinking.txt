@@ -30,3 +30,11 @@
     [" ", "i", "the", "to", "and", "of", "a", "that", "\", ",", "!", "i'm", "just", "what"] +
     ["my", "in", "this", "is", "have", "on", "be", "at", "but"]
 }
+
+2.5.2018 {
+  Work on filtering out the time, word, and rating
+
+  So, I'm getting the wordCounts, the fileNamrArray, and the frequency array,
+  but nothing searches each document for a certain thing
+    Search for a specific string and return matches... 
+}

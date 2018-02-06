@@ -1,7 +1,7 @@
 module.exports = {
   fileNameArray: function(files){
     var array = [];
-    
+
     files.forEach(function(file){
       array.push(file.originalname);
     });
@@ -67,6 +67,30 @@ module.exports = {
     });
 
     return cleanArray;
+  },
+
+  //input the array of fileData
+  extractTimeData: function(array){
+    var dataSet = [];
+
+    array.forEach(function(file){
+      var entry = file.buffer.toString("utf8").split(" ");
+      var array = [];
+
+      for (var i=0; i<entry.length; i++){
+        var matchTime = /\d{1,2}:/;
+        var matchCase = matchTime.test(entry[i]);
+        // console.log(word, matchTime.test(word))
+
+        if (matchCase) {
+          array.push(entry[i], entry[i+1], entry[i+2]);
+        }
+      }
+
+      dataSet.push(array);
+    });
+
+    return dataSet;
   }
 }
 

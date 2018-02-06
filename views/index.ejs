@@ -15,6 +15,10 @@
     </div>
     <div class="content">
       <div class="input-form">
+        <h1>Select .txt files: </h1>
+      </div>
+
+      <div class="input-form">
         <!-- file submit -->
         <form enctype="multipart/form-data" action="/" method="post">
           <input type="file" name="files" multiple>
@@ -23,9 +27,9 @@
       </div>
 
       <div class="file-results">
-        <h1 class="display-text">Uploaded files...</h1>
+        <h2 class="display-text">Uploaded files...</h2>
         <% fileArray.forEach(function(file){ %>
-          <h2 class="display-text"> <%- file %> </h2>
+          <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"</h3>
         <% }); %>
       </div>
     </div>
