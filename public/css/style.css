@@ -9,11 +9,13 @@ body {
   width: 100%;
   height: 80px;
   margin-bottom: 8%;
+  overflow: auto; 
   /*position: fixed;*/ }
 
 .header-inner {
   position: relative;
   width: 50%;
+  height: 100%;
   margin: 0 auto; }
 
 /*End header*/
