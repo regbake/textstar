@@ -36,5 +36,12 @@
 
   So, I'm getting the wordCounts, the fileNamrArray, and the frequency array,
   but nothing searches each document for a certain thing
-    Search for a specific string and return matches... 
+    Search for a specific string and return matches...
+}
+
+2.7.2018 {
+  I'm trying to clean up the tempArray from stuff like "; and /n" and the
+  other random strings that get included...
+
+  Fyeah!
 }

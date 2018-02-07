@@ -75,20 +75,33 @@ module.exports = {
 
     array.forEach(function(file){
       var entry = file.buffer.toString("utf8").split(" ");
-      var array = [];
+      var tempArray = [];
 
       for (var i=0; i<entry.length; i++){
         var matchTime = /\d{1,2}:/;
         var matchCase = matchTime.test(entry[i]);
-        // console.log(word, matchTime.test(word))
+
 
         if (matchCase) {
-          array.push(entry[i], entry[i+1], entry[i+2]);
+          //time comes first, so match that and the following two things
+          //which are the rating and the word
+          tempArray.push(entry[i].replace(/\n/g,""), entry[i+1].replace(/;/g,""), entry[i+2].replace(/\n/g,""));
         }
       }
 
-      dataSet.push(array);
+      //clean the temp array from the /n's and other shiz
+      // [ '2.6.2018.txt\n\n7:45am;',
+      // '9.2/10;',
+      // 'preparing\n\nJust',
+      tempArray.forEach(function(el){
+
+      });
+
+      console.log("THIS IS THE TEMP ARRAY", tempArray);
+      dataSet.push(tempArray);
     });
+
+
 
     return dataSet;
   }
