@@ -44,4 +44,14 @@
   other random strings that get included...
 
   Fyeah!
+
+  I guess I haven't used the same syntax for everything so this won't be a universal thing?
+}
+
+2.8.2018 {
+  Click the button to add the text to the screen...?
+  What about sending to the front the information about the text?
+  That function needs to be worked on a little bit too.
+
+  --- That actually works pretty well right now
 }

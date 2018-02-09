@@ -85,19 +85,21 @@ module.exports = {
         if (matchCase) {
           //time comes first, so match that and the following two things
           //which are the rating and the word
-          tempArray.push(entry[i].replace(/\n/g,""), entry[i+1].replace(/;/g,""), entry[i+2].replace(/\n/g,""));
+          let time = entry[i].replace(/\n/g," ").split(" ")[2];
+          // time = time.replace(/;/, "");
+          let rating = entry[i+1].replace(/;/g, "");
+          let word = entry[i+2].replace(/\n/g," ").split(" ")[0];
+
+
+          tempArray.push(time, rating, word);
         }
       }
 
-      //clean the temp array from the /n's and other shiz
-      // [ '2.6.2018.txt\n\n7:45am;',
-      // '9.2/10;',
-      // 'preparing\n\nJust',
       tempArray.forEach(function(el){
 
       });
 
-      console.log("THIS IS THE TEMP ARRAY", tempArray);
+      // console.log("THIS IS THE Tmp ARRAY", tempArray);
       dataSet.push(tempArray);
     });
 

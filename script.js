@@ -30,27 +30,31 @@ if (!Object.entries){
 //routes
 app.get("/", function(req, res){
   res.render("index", {
-    fileArray: []
+    fileArray: [],
+    timeData: []
   });
 });
 
 app.post("/", upload.any("files"), function(req, res){
-  var fileArray = [];
-  var files = req.files; //an array of file Objects if multiple uploaded
-  var fileNameArray = TextFunctions.fileNameArray(req.files);
+  const fileArray = [];
+  const files = req.files; //an array of file Objects if multiple uploaded
+  const fileNameArray = TextFunctions.fileNameArray(req.files);
+  let sortedFrequencyArray, cleanArray, timeData;
 
   if (files.length > 1){
-    var sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
-    var cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
-    var timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
+    sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
+    cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
+    timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
 
     // console.log(timeData);
     // console.log(cleanArray);
     // console.log(sortedFrequencyArray);
+
   }
 
   res.render("index", {
-    fileArray: fileNameArray
+    fileArray: fileNameArray,
+    timeData: timeData
   });
 })
 
