@@ -38,11 +38,15 @@
         </div>
 
         <!-- Output content area -->
-        <div class="output">
-          <% timeData.forEach(function(info){ %>
-            <h3 class="display-text"> <%- info %> </h3>
-          <% }); %>
+        <div id="output-wrap">
+            <div class="output">
+              <% timeData.forEach(function(info){ %>
+                <!-- <h3 class="display-text"> <%- info %> </h3> -->
+                <h3 class="display-text"> <%- info %> </h3>
+              <% }); %>
+            </div>
         </div>
+
     </div>
 
     <script>
