@@ -9,39 +9,41 @@
   </head>
   <body>
     <div class="header">
-      <div class="header-inner">
-        <h1 class="logo"><a href="/">Texstuff</a></h1>
-      </div>
+        <div class="header-inner">
+          <h1 class="logo"><a href="/">Texstuff</a></h1>
+        </div>
     </div>
 
-    <!-- Side bar thing -->
-    <div class="input-content">
-      <div class="input-form">
-        <h1>Select .txt files: </h1>
-      </div>
+    <div id="input-output-wrap">
+        <!-- Side bar thing -->
+        <div class="input-content">
+            <div class="input-form">
+              <h1>Select .txt files: </h1>
+            </div>
 
-      <div class="input-form">
-        <!-- file submit -->
-        <form enctype="multipart/form-data" action="/" method="post">
-          <input type="file" name="files" multiple>
-          <button type="submit" class="btn btn-success">Submit File</button>
-        </form>
-      </div>
+            <div class="input-form">
+              <!-- file submit -->
+              <form enctype="multipart/form-data" action="/" method="post">
+                <input type="file" name="files" multiple>
+                <button type="submit" class="btn btn-success">Submit File</button>
+              </form>
+            </div>
 
-      <div class="file-results">
-        <h2 class="display-text">Uploaded files...</h2>
-        <% fileArray.forEach(function(file){ %>
-          <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"></h3>
-        <% }); %>
-      </div>
+            <div class="file-results">
+              <h2 class="display-text">Uploaded files...</h2>
+              <% fileArray.forEach(function(file){ %>
+                <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"></h3>
+              <% }); %>
+            </div>
+        </div>
+
+        <!-- Output content area -->
+        <div class="output">
+          <% timeData.forEach(function(info){ %>
+            <h3 class="display-text"> <%- info %> </h3>
+          <% }); %>
+        </div>
     </div>
-
-    <div class="output">
-      <% timeData.forEach(function(info){ %>
-        <h3 class="display-text"> <%- info %> </h3>
-      <% }); %>
-    </div>
-
 
     <script>
 

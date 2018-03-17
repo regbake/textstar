@@ -26,16 +26,17 @@ body {
 
 /*Begin content*/
 .input-content {
-  /*border: solid black 1px;*/
   position: relative;
-  margin-top: -1.5%;
-  top: 10%;
+  /* margin-top: -1.5%;
+  top: 10%; */
   border-right: solid white 3px;
   border-bottom: solid white 3px;
   text-align: center;
   width: 30%;
-  height: 100vh;
+  height: 80%;
   background-color: rgba(217, 246, 247, .4);
+  border: solid red 1px;
+  float: left;
   }
 
 .input-form {
@@ -47,7 +48,7 @@ body {
   }
 
 .file-results {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   background-color: lightblue;
   padding: 2%;
@@ -58,10 +59,15 @@ body {
   }
 
 .output {
-  position: relative;
-  top: 0;
-  left: 0;
+  border: solid black 1px;
   float: left;
+  width: 60%;
+}
+
+#input-output-wrap {
+  background-color: green;
+  border: solid blue 5px;
+  height: 100vh;
 }
 
 /*End content*/
