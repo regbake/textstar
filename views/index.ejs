@@ -39,11 +39,19 @@
 
         <!-- Output content area -->
         <div id="output-wrap">
-            <div class="output">              
-              <% timeData.forEach(function(info){ %>
-                <!-- <h3 class="display-text"> <%- info %> </h3> -->
-                <h3 class="display-text"> <%- info %> </h3>
-              <% }); %>
+            <div class="output">
+                <!-- show time info -->
+                <% timeData.forEach(function(info, i){ %>
+                    <p>name: </p>
+                    <h3 class="display-text"> <%- info %> </h3>
+                <% }); %>
+                <!-- show top ten common words -->
+                <h2>10 most common words</h2>
+                <% cleanArray.forEach(function(word, i){ %>
+                    <% if (i<10){ %>
+                      <h3 class="display-text"> <%- word %> </h3>
+                    <% } %>
+                <% }); %>
             </div>
         </div>
 

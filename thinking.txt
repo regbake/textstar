@@ -60,6 +60,11 @@
   Keep working on things.
   The output needs to be adjusted [x]
 
-  Find a way to do analysis on the header word? 
+  Find a way to do analysis on the header word?
 
+}
+
+3.17.2018 {
+  Having trouble getting the name from fileArray to output next to
+  the timeData output. 
 }

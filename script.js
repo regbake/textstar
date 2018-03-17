@@ -31,7 +31,8 @@ if (!Object.entries){
 app.get("/", function(req, res){
   res.render("index", {
     fileArray: [],
-    timeData: []
+    timeData: [],
+    cleanArray: []
   });
 });
 
@@ -54,7 +55,8 @@ app.post("/", upload.any("files"), function(req, res){
 
   res.render("index", {
     fileArray: fileNameArray,
-    timeData: timeData
+    timeData: timeData,
+    cleanArray: cleanArray
   });
 })
 
