@@ -41,7 +41,7 @@ app.post("/", upload.any("files"), function(req, res){
   const fileNameArray = TextFunctions.fileNameArray(req.files);
   let sortedFrequencyArray, cleanArray, timeData;
 
-  if (files.length > 1){
+  if (files.length > 0){
     sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
     cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
     timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));

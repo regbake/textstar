@@ -58,7 +58,8 @@
 
 3.16.2018 {
   Keep working on things.
-  The output needs to be adjusted []
-  
+  The output needs to be adjusted [x]
+
+  Find a way to do analysis on the header word? 
 
 }
