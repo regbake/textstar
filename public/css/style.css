@@ -35,7 +35,7 @@ body {
   width: 30%;
   height: 100%;
   background-color: rgba(217, 246, 247, .4);
-  border: solid red 1px;
+  /* border: solid red 1px; */
   float: left;
   }
 
@@ -59,21 +59,21 @@ body {
   }
 
 #output-wrap {
-  border: solid black 3px;
+  /* border: solid black 3px; */
   float: left;
   width: 65%;
 }
 
 .output {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   width: 55%;
   margin-left: 30%;
 }
 
 #input-output-wrap {
-  /* background-color: green; */
-  border: solid blue 5px;
+  /* border: solid blue 5px; */
   height: 100vh;
 }
+
 
 /*End content*/

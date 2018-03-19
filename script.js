@@ -48,7 +48,7 @@ app.post("/", upload.any("files"), function(req, res){
       files.push(file);
     }
   });
-  
+
   //declare this after cleaning out non-txt files
   const fileNameArray = TextFunctions.fileNameArray(files);
 
@@ -57,7 +57,7 @@ app.post("/", upload.any("files"), function(req, res){
     cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
     timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
 
-    // console.log(timeData);
+    console.log(timeData);
     // console.log(cleanArray);
     // console.log(sortedFrequencyArray);
 

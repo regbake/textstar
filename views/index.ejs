@@ -42,12 +42,16 @@
             <div class="output">
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
-                    <p>name: <%- fileArray[i] %></p>
-                    <h3 class="display-text"> <%- info %> </h3>
+                    <h3><%- fileArray[i] %></h3>
+                    <p class="display-text"> <%- info %> </p>
                 <% }); %>
+
                 <!-- show top ten common words -->
-                <h2>10 most common words</h2>
                 <% cleanArray.forEach(function(word, i){ %>
+                    <% if (i === 1){ %>
+                      <h2>10 most common words</h2>
+                    <% } %>
+
                     <% if (i<10){ %>
                       <h3 class="display-text"> <%- word %> </h3>
                     <% } %>

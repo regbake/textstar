@@ -75,7 +75,17 @@
 }
 
 3.18.2018 {
-  Select .txt files only from input array
+  Select .txt files only from input array [x]
+
+  Weird bug where the title isn't above the first entry[]...
+
+  Choose what else is going to be seen []
+    Make it a data visual!
+      When am I writing []
+      What does the mood look like []
+      What words are being captured []
+
+  What will this user interface look like?
 
 }
 
