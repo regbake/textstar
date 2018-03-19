@@ -38,9 +38,19 @@ app.get("/", function(req, res){
 
 app.post("/", upload.any("files"), function(req, res){
   const fileArray = [];
-  const files = req.files; //an array of file Objects if multiple uploaded
-  const fileNameArray = TextFunctions.fileNameArray(req.files);
+  const allFiles = req.files; //an array of file Objects if multiple uploaded
+  const files = []; //all the .txtFiles
   let sortedFrequencyArray, cleanArray, timeData;
+
+  //select only text files
+  allFiles.forEach(function(file){
+    if (file.mimetype === 'text/plain'){
+      files.push(file);
+    }
+  });
+  
+  //declare this after cleaning out non-txt files
+  const fileNameArray = TextFunctions.fileNameArray(files);
 
   if (files.length > 0){
     sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned

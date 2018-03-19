@@ -66,5 +66,39 @@
 
 3.17.2018 {
   Having trouble getting the name from fileArray to output next to
-  the timeData output. 
+  the timeData output. []
+
+  Right now the submit button populates everything,
+  I want to upload files and then choose the ones to analyse []
+
+  I think that using react will be the best way to manage this.
 }
+
+3.18.2018 {
+  Select .txt files only from input array
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
