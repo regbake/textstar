@@ -87,8 +87,14 @@
 
   What will this user interface look like?
 
+  Is the point where I convert over to react now, because that will unlock
+  some cool things all around.
 }
 
+3.19.2018 {
+  search for a word []
+  
+}
 
 
 
