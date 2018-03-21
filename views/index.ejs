@@ -35,7 +35,7 @@
                 <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"></h3>
 
                 <% if (i === fileArray.length-1){ %>
-                  <button>Run analysis</button>
+                  <button onclick="hi()">Run analysis</button>
                 <% }; %>
               <% }); %>
             </div>
@@ -46,7 +46,7 @@
             <div class="output">
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
-                    <h3 class="time-data t-data<%- i%>"><%- fileArray[i] %></h3>
+                    <h3 class="time-data t-data-<%- i%>"><%- fileArray[i] %></h3>
                     <p class="display-text time-data t-data-<%- i%>"> <%- info %> </p>
                 <% }); %>
 
@@ -66,7 +66,13 @@
     </div>
 
     <script>
-
+      function hi(){
+        var test = document.getElementsByClassName('t-data-0')
+          for (var i = 0; i<test.length; i++){
+            test[i].style.display = "contents";
+          }
+        console.log(test)
+      }
 
     </script>
   </body>
