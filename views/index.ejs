@@ -10,7 +10,7 @@
   <body>
     <div class="header">
         <div class="header-inner">
-          <h1 class="logo"><a href="/">Texstuff</a></h1>
+          <h1 class="logo"><a href="/">Under the writing hood</a></h1>
         </div>
     </div>
 
@@ -31,8 +31,12 @@
 
             <div class="file-results">
               <h2 class="display-text">Uploaded files...</h2>
-              <% fileArray.forEach(function(file){ %>
+              <% fileArray.forEach(function(file, i){ %>
                 <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"></h3>
+
+                <% if (i === fileArray.length-1){ %>
+                  <button>Run analysis</button>
+                <% }; %>
               <% }); %>
             </div>
         </div>
@@ -48,13 +52,13 @@
 
                 <!-- show top ten common words -->
                 <% cleanArray.forEach(function(word, i){ %>
-                    <% if (i === 1){ %>
+                    <% if (i === 0){ %>
                       <h2>10 most common words</h2>
-                    <% } %>
+                    <% }; %>
 
                     <% if (i<10){ %>
                       <h3 class="display-text"> <%- word %> </h3>
-                    <% } %>
+                    <% }; %>
                 <% }); %>
             </div>
         </div>
@@ -62,6 +66,7 @@
     </div>
 
     <script>
+
 
     </script>
   </body>

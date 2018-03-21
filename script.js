@@ -65,6 +65,9 @@ app.post("/", upload.any("files"), function(req, res){
 
   res.render("index", {
     fileArray: fileNameArray,
+    //commented out for testing
+    // timeData: [],
+    // cleanArray: []
     timeData: timeData,
     cleanArray: cleanArray
   });
