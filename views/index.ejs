@@ -32,10 +32,10 @@
             <div class="file-results">
               <h2 class="display-text">Uploaded files...</h2>
               <% fileArray.forEach(function(file, i){ %>
-                <h3 class="display-text"> <%- file %> <input id="<%- file %>" type="checkbox"></h3>
+                <h3 class="display-text output-name"> <%- file %> <input id="<%- file %>" type="checkbox" name="checkBox"> </h3>
 
                 <% if (i === fileArray.length-1){ %>
-                  <button onclick="hi()">Run analysis</button>
+                  <button onclick="showEm()">Run analysis</button>
                 <% }; %>
               <% }); %>
             </div>
@@ -66,13 +66,26 @@
     </div>
 
     <script>
-      function hi(){
+      function showEm(){
+        var checkBoxes = document.getElementsByName('checkBox')
+        var checkArray = [];
         var test = document.getElementsByClassName('t-data-0')
-          for (var i = 0; i<test.length; i++){
-            test[i].style.display = "contents";
+
+          for (var i=0; i<checkBoxes.length; i++){
+            if (checkBoxes[i].checked){
+              checkArray.push(checkBoxes[i])
+            }
           }
-        console.log(test)
+
+          for (var i = 0; i<test.length; i++){
+            test[i].classList.remove("time-data")
+          }
+
+          console.log(checkArray)
+
       }
+
+
 
     </script>
   </body>
