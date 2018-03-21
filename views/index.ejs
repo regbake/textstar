@@ -46,8 +46,8 @@
             <div class="output">
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
-                    <h3><%- fileArray[i] %></h3>
-                    <p class="display-text"> <%- info %> </p>
+                    <h3 class="time-data t-data<%- i%>"><%- fileArray[i] %></h3>
+                    <p class="display-text time-data t-data-<%- i%>"> <%- info %> </p>
                 <% }); %>
 
                 <!-- show top ten common words -->

@@ -75,6 +75,10 @@ body {
   height: 100vh;
 }
 
+.time-data {
+  display: none;
+}
+
 
 
 /*End content*/
