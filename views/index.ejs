@@ -68,20 +68,33 @@
     <script>
       function showEm(){
         var checkBoxes = document.getElementsByName('checkBox')
-        var checkArray = [];
-        var test = document.getElementsByClassName('t-data-0')
+        var checkArray = []; //each position of files names
+        var displayElements = document.getElementsByClassName('time-data')
 
           for (var i=0; i<checkBoxes.length; i++){
             if (checkBoxes[i].checked){
-              checkArray.push(checkBoxes[i])
+              checkArray.push(i)
+              //pushed the array position of the file
             }
           }
 
-          for (var i = 0; i<test.length; i++){
-            test[i].classList.remove("time-data")
+          //iterate over the checkArray, which is array positions
+          // for (var i = 0; i<test.length; i++){
+          //   console.log(checkArray[i])
+          //   console.log(test[i].classList)
+          //   test[i].classList.remove("time-data-"+i)
+          // }
+
+          for (let p=0; p<checkArray.length; p++){
+              var currElement = document.getElementsByClassName('t-data-'+checkArray[p]);
+
+              for (var k=0; k<currElement.length; k++){
+                  currElement[k].classList.remove('time-data');
+              }
           }
 
-          console.log(checkArray)
+          // console.log("checkArray: ", checkArray)
+          // console.log("displayElements: ", displayElements)
 
       }
 
