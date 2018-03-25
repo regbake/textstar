@@ -77,7 +77,7 @@
 3.18.2018 {
   Select .txt files only from input array [x]
 
-  Weird bug where the title isn't above the first entry[]...
+  Weird bug where the title isn't above the first entry[x]...
 
   Choose what else is going to be seen []
     Make it a data visual!
@@ -97,7 +97,11 @@
 }
 
 3.20.2018 {
-  get the clicked boxes from the input array
+  get the clicked boxes from the input array [x]
+}
+
+3.25.2018 {
+  implement sessionStorage instead of react []
 }
 
 
