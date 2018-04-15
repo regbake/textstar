@@ -101,7 +101,11 @@
 }
 
 3.25.2018 {
-  implement sessionStorage instead of react []
+  implement sessionStorage instead of react [x]
+}
+
+3.27.2018 {
+   going with react, BABY [X]
 }
 
 

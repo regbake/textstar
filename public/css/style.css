@@ -37,7 +37,7 @@ body {
   background-color: rgba(217, 246, 247, .4);
   /* border: solid red 1px; */
   float: left;
-  }
+}
 
 .input-form {
   text-align: center;
@@ -77,6 +77,16 @@ body {
 
 .time-data {
   display: none;
+}
+
+.output-data {
+  background-color: grey;
+  width: auto;
+  height: 15%;
+}
+
+.ten-common {
+    background-color: grey;
 }
 
 

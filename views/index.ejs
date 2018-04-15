@@ -31,6 +31,7 @@
 
             <div class="file-results">
               <h2 class="display-text">Uploaded files...</h2>
+
               <% fileArray.forEach(function(file, i){ %>
                 <h3 class="display-text output-name"> <%- file %> <input id="<%- file %>" type="checkbox" name="checkBox"> </h3>
 
@@ -46,13 +47,18 @@
             <div class="output">
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
+                  <div class="output-data">
                     <h3 class="time-data t-data-<%- i%>"><%- fileArray[i] %></h3>
                     <p class="display-text time-data t-data-<%- i%>"> <%- info %> </p>
+                  </div>
                 <% }); %>
 
+
                 <!-- show top ten common words -->
+                <div class="ten-common">
                 <% cleanArray.forEach(function(word, i){ %>
                     <% if (i === 0){ %>
+
                       <h2>10 most common words</h2>
                     <% }; %>
 
@@ -60,13 +66,13 @@
                       <h3 class="display-text"> <%- word %> </h3>
                     <% }; %>
                 <% }); %>
+              </div>
             </div>
         </div>
 
     </div>
 
     <script>
-      sessionStorage.setItem('name', 'reggie');
       function showEm(){
         var checkBoxes = document.getElementsByName('checkBox')
         var checkArray = []; //each position of files names

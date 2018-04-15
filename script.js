@@ -27,7 +27,6 @@ if (!Object.entries){
   };
 }
 
-//routes
 app.get("/", function(req, res){
   res.render("index", {
     fileArray: [],
@@ -37,7 +36,10 @@ app.get("/", function(req, res){
 });
 
 app.post("/", upload.any("files"), function(req, res){
+  console.log("ahoy from post, matey");
+
   const fileArray = [];
+  //make sure to use REQ.FILES
   const allFiles = req.files; //an array of file Objects if multiple uploaded
   const files = []; //all the .txtFiles
   let sortedFrequencyArray, cleanArray, timeData;
@@ -73,8 +75,8 @@ app.post("/", upload.any("files"), function(req, res){
   });
 })
 
-app.listen(3000, function(){
-  console.log("Hooked up to port 3k");
+app.listen(3001, function(){
+  console.log("Hooked up to port 3k+1");
 });
 
 module.exports = app;
