@@ -79,10 +79,20 @@ body {
   display: none;
 }
 
+.time-data-display {
+  position: relative;
+  margin-left: 15%;
+}
+
+.info-display {
+  border-radius: 10px;
+}
+
 .output-data {
   background-color: grey;
   width: auto;
   height: 15%;
+  border-radius: 10px;
 }
 
 .ten-common {

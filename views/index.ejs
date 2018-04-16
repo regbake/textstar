@@ -48,8 +48,8 @@
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
                   <div class="output-data">
-                    <h3 class="time-data t-data-<%- i%>"><%- fileArray[i] %></h3>
-                    <p class="display-text time-data t-data-<%- i%>"> <%- info %> </p>
+                    <h3 class="time-data t-data-<%- i%> time-data-display">File: <%- fileArray[i] %></h3>
+                    <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
                   </div>
                 <% }); %>
 
@@ -84,13 +84,6 @@
               //pushed the array position of the file
             }
           }
-
-          //iterate over the checkArray, which is array positions
-          // for (var i = 0; i<test.length; i++){
-          //   console.log(checkArray[i])
-          //   console.log(test[i].classList)
-          //   test[i].classList.remove("time-data-"+i)
-          // }
 
           for (let p=0; p<checkArray.length; p++){
               var currElement = document.getElementsByClassName('t-data-'+checkArray[p]);
