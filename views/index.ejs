@@ -29,6 +29,11 @@
               </form>
             </div>
 
+            <!-- search bar -->
+            <div>
+              <input id="search-input" type="text" name="search-bar" onkeypress="console.log(this.value)" />
+            </div>
+
             <div class="file-results">
               <h2 class="display-text">Uploaded files...</h2>
 
@@ -63,7 +68,7 @@
                     <% }; %>
 
                     <% if (i<10){ %>
-                      <h3 class="display-text"> <%- word %> </h3>
+                      <h3 class="display-text common-output"> <%- word %> </h3>
                     <% }; %>
                 <% }); %>
               </div>
@@ -73,6 +78,11 @@
     </div>
 
     <script>
+      var searchInput = document.getElementById("search-input");
+
+      // searchInput.addEventListener("onchange", )
+      searchInput.onchange(console.log("change"))
+
       function showEm(){
         var checkBoxes = document.getElementsByName('checkBox')
         var checkArray = []; //each position of files names
