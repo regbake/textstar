@@ -109,7 +109,7 @@
 }
 
 4.16.2018 {
-  search bar []
+  implement search bar [x]
   display intro as daily breakdown []
 }
 

@@ -60,6 +60,7 @@ module.exports = {
             word.splice(i, 1);
           }
         }
+        
         pair[0] = word.join("");
         cleanArray.push(pair);
       }
@@ -81,7 +82,6 @@ module.exports = {
         var matchTime = /\d{1,2}:/;
         var matchCase = matchTime.test(entry[i]);
 
-
         if (matchCase) {
           //time comes first, so match that and the following two things
           //which are the rating and the word
@@ -90,20 +90,15 @@ module.exports = {
           let rating = entry[i+1].replace(/;/g, "");
           let word = entry[i+2].replace(/\n/g," ").split(" ")[0];
 
-
           tempArray.push(time, rating, word);
         }
       }
-
       tempArray.forEach(function(el){
-
       });
 
       // console.log("THIS IS THE Tmp ARRAY", tempArray);
       dataSet.push(tempArray);
     });
-
-
 
     return dataSet;
   }

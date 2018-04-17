@@ -58,12 +58,11 @@ app.post("/", upload.any("files"), function(req, res){
     sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
     cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
     timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
-
-    console.log(timeData);
-    // console.log(cleanArray);
-    // console.log(sortedFrequencyArray);
-
   }
+
+  // console.log("Time data:", timeData);
+  // console.log("clean array", cleanArray);
+  // console.log("file name array", fileNameArray);
 
   res.render("index", {
     fileArray: fileNameArray,
