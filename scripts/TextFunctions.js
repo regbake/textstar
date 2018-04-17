@@ -52,7 +52,8 @@ module.exports = {
             && oWord != "of" && oWord != "a" && oWord != "is" && oWord != "in" && oWord != "this"
             && oWord != "be" && oWord != "on" && oWord != "at" && oWord != "that" && oWord != "my"
             && oWord != "just" && oWord != "for" && oWord != "so" && oWord != "an" && oWord != "it"
-            && oWord != "as" && oWord != "me"){ //initial filter
+            && oWord != "as" && oWord != "me" && oWord != "things" && oWord != "i'm" && oWord != "it's"
+            && oWord != "about" && oWord != "really" && oWord != "that's" && oWord != "but" && oWord != "what"){ //initial filter
         for (var i=0; i<word.length; i++){ //remove punctuation
           if (word[i] === "\'") {
             //catch words with apostrophe
@@ -60,7 +61,7 @@ module.exports = {
             word.splice(i, 1);
           }
         }
-        
+
         pair[0] = word.join("");
         cleanArray.push(pair);
       }

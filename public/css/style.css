@@ -81,7 +81,8 @@ body {
 
 .time-data-display {
   position: relative;
-  margin-left: 15%;
+  margin-left: 20%;
+  margin-top: 3%;
 }
 
 .info-display {
