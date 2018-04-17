@@ -30,8 +30,12 @@
             </div>
 
             <!-- search bar -->
-            <div>
-              <input id="search-input" type="text" name="search-bar" onkeypress="console.log(this.value)" />
+            <div class="form-contain">
+
+              <form name="search-form">
+                <input id="search-input" type="text" name="search-bar" onkeypress="handleChange(this.value)" />
+              </form>
+
             </div>
 
             <div class="file-results">
@@ -53,8 +57,23 @@
                 <!-- show time info -->
                 <% timeData.forEach(function(info, i){ %>
                   <div class="output-data">
+                    <!-- Date -->
                     <h3 class="time-data t-data-<%- i%> time-data-display">File: <%- fileArray[i] %></h3>
-                    <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
+                    <!-- Info string -->
+
+                    <% if (info.length === 3) { %>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
+                    <% } else if (info.length === 6) { %>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(0,3) %> </p>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(3,6) %> </p>
+                    <% } else if (info.length === 9) { %>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(0,3) %> </p>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(3,6) %> </p>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(6,9) %> </p>
+                    <% } else { %>
+                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
+                    <% } %>
+
                   </div>
                 <% }); %>
 
@@ -80,13 +99,18 @@
     <script>
       var searchInput = document.getElementById("search-input");
 
-      // searchInput.addEventListener("onchange", )
-      searchInput.onchange(console.log("change"))
+      function handleChange(val){
+
+
+
+      }
 
       function showEm(){
         var checkBoxes = document.getElementsByName('checkBox')
         var checkArray = []; //each position of files names
         var displayElements = document.getElementsByClassName('time-data')
+
+        searchInput.classList.remove("hide-form");
 
           for (var i=0; i<checkBoxes.length; i++){
             if (checkBoxes[i].checked){

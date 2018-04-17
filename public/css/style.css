@@ -86,6 +86,7 @@ body {
 
 .info-display {
   border-radius: 10px;
+  padding-left: 10%;
 }
 
 .output-data {
@@ -99,8 +100,12 @@ body {
   background-color: grey;
 }
 
+.hide-form {
+  display: none;
+}
+
 .common-output {
-  
+
 }
 
 
