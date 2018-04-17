@@ -53,7 +53,8 @@ module.exports = {
             && oWord != "be" && oWord != "on" && oWord != "at" && oWord != "that" && oWord != "my"
             && oWord != "just" && oWord != "for" && oWord != "so" && oWord != "an" && oWord != "it"
             && oWord != "as" && oWord != "me" && oWord != "things" && oWord != "i'm" && oWord != "it's"
-            && oWord != "about" && oWord != "really" && oWord != "that's" && oWord != "but" && oWord != "what"){ //initial filter
+            && oWord != "about" && oWord != "really" && oWord != "that's" && oWord != "but" && oWord != "what"
+            && oWord != "all" && oWord != "with" && oWord != "get" && oWord != "some"){ //initial filter
         for (var i=0; i<word.length; i++){ //remove punctuation
           if (word[i] === "\'") {
             //catch words with apostrophe
@@ -73,11 +74,11 @@ module.exports = {
 
   //input the array of fileData
   extractTimeData: function(array){
-    var dataSet = [];
+    const dataSet = [];
 
     array.forEach(function(file){
-      var entry = file.buffer.toString("utf8").split(" ");
-      var tempArray = [];
+      const entry = file.buffer.toString("utf8").split(" ");
+      const tempArray = [];
 
       for (var i=0; i<entry.length; i++){
         var matchTime = /\d{1,2}:/;
@@ -94,14 +95,33 @@ module.exports = {
           tempArray.push(time, rating, word);
         }
       }
-      tempArray.forEach(function(el){
-      });
 
       // console.log("THIS IS THE Tmp ARRAY", tempArray);
       dataSet.push(tempArray);
     });
 
+    console.log("From extractTimeData: ", this.convertData());
     return dataSet;
+  },
+
+  //TODO cleanse the dataSet and turn into objects
+  convertData: function(dataSet){
+      const Format = class {
+          constructor(time, rate, word){
+              this.time = time;
+              this.rate = rate;
+              this.word = word;
+          }
+
+          greet() {
+              return "Howdy!!";
+          }
+      }
+
+      const test = new Format(["6am"], [9.1], ["foobar"]);
+      console.log("from convert data", test.greet())
+
+      return test;
   }
 }
 

@@ -60,33 +60,9 @@
                   <div class="output-data">
                     <!-- Date -->
                     <h3 class="time-data t-data-<%- i%> time-data-display">File: <%- fileArray[i] %></h3>
+
                     <!-- Info string -->
 
-                    <% if (info.length === 3) { %>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> 1 entry per day </p>
-
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
-                    <% } else if (info.length === 6) { %>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> 2 entry per day </p>
-
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(0,3) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(3,6) %> </p>
-                    <% } else if (info.length === 9) { %>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> 3 entry per day </p>
-
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(0,3) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(3,6) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(6,9) %> </p>
-                    <% } else if (info.length === 12) { %>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> 4 entry per day </p>
-
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(0,3) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(3,6) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(6,9) %> </p>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info.slice(9,12) %> </p>
-                    <% } else { %>
-                      <p class="display-text time-data t-data-<%- i%> info-display"> <%- info %> </p>
-                    <% } %>
 
                   </div>
                 <% }); %>

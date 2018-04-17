@@ -57,12 +57,14 @@ app.post("/", upload.any("files"), function(req, res){
   if (files.length > 0){
     sortedFrequencyArray = TextFunctions.fileArrayToFrequencyArray(files); //raw not cleaned
     cleanArray = TextFunctions.cleanArray(sortedFrequencyArray); //filtered and cleaned, still has \'
+
+    //the first half of files is {file inforation}, the second half is string output
     timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
   }
 
-  // console.log("Time data:", timeData);
-  // console.log("clean array", cleanArray);
-  // console.log("file name array", fileNameArray);
+  console.log("Time data: ", timeData);
+  // console.log("files: ", files);
+  // console.log("file slice ********############", files.slice(0, (files.length)/2));
 
   res.render("index", {
     fileArray: fileNameArray,
