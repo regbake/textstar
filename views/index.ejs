@@ -40,6 +40,7 @@
 
             <div class="file-results">
               <h2 class="display-text">Uploaded files...</h2>
+              <button onclick="checkAll()">Check All</button>
 
               <% fileArray.forEach(function(file, i){ %>
                 <h3 class="display-text output-name"> <%- file %> <input id="<%- file %>" type="checkbox" name="checkBox"> </h3>
@@ -112,11 +113,17 @@
     <script>
       var searchInput = document.getElementById("search-input");
 
-      function handleChange(val){
+      function checkAll() {
+        var boxes = document.getElementsByClassName('output-name');
 
-
+        for (var i=0; i<boxes.length; i++){
+          //input is nested inside boxes
+          boxes[i].childNodes[1].checked = true;
+        }
 
       }
+
+      function handleChange(val){}
 
       function showEm(){
         var checkBoxes = document.getElementsByName('checkBox')

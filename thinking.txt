@@ -113,6 +113,11 @@
   display intro as daily breakdown []
 }
 
+4.17.2018 {
+  make a select all button []
+  average out the rating []
+}
+
 
 
 
