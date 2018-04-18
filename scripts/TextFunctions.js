@@ -100,12 +100,16 @@ module.exports = {
       dataSet.push(tempArray);
     });
 
-    console.log("From extractTimeData: ", this.convertData());
+    console.log("From extractTimeData: ", this.convertData(dataSet));
     return dataSet;
   },
 
   //TODO cleanse the dataSet and turn into objects
   convertData: function(dataSet){
+      //array of objects
+      const arr = [];
+
+      //declare the organization for the data
       const Format = class {
           constructor(time, rate, word){
               this.time = time;
@@ -118,10 +122,31 @@ module.exports = {
           }
       }
 
-      const test = new Format(["6am"], [9.1], ["foobar"]);
-      console.log("from convert data", test.greet())
+      //todo: parse the input dataSet and separate into time, rate, words
 
-      return test;
+      for (let i=0; i<dataSet.length; i++){
+        let tempTime = [], tempRate = [], tempWord = [];
+
+        for (let k=0; k<dataSet[i].length; k++){
+          if (dataSet[i][k].indexOf(":") > 0){
+            //time
+            tempTime.push(dataSet[i][k]);
+
+          } else if (dataSet[i][k].indexOf(".") > 0){
+            //rate
+            tempRate.push(dataSet[i][k]);
+
+          } else {
+            //word
+            tempWord.push(dataSet[i][k]);
+
+          }
+        }
+
+        arr.push(new Format(tempTime, tempRate, tempWord));
+      }
+
+      return arr;
   }
 }
 
