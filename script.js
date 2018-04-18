@@ -31,7 +31,8 @@ app.get("/", function(req, res){
   res.render("index", {
     fileArray: [],
     timeData: [],
-    cleanArray: []
+    cleanArray: [],
+    timeObject: []
   });
 });
 
@@ -42,7 +43,7 @@ app.post("/", upload.any("files"), function(req, res){
   //make sure to use REQ.FILES
   const allFiles = req.files; //an array of file Objects if multiple uploaded
   const files = []; //all the .txtFiles
-  let sortedFrequencyArray, cleanArray, timeData;
+  let sortedFrequencyArray, cleanArray, timeData, timeObject;
 
   //select only text files
   allFiles.forEach(function(file){
@@ -60,9 +61,11 @@ app.post("/", upload.any("files"), function(req, res){
 
     //the first half of files is {file inforation}, the second half is string output
     timeData = TextFunctions.extractTimeData(files.slice(0, (files.length)/2));
+    timeObject = TextFunctions.convertData(timeData);
+
   }
 
-  console.log("Time data: ", timeData);
+  console.log("Time object: ", timeObject[0].time);
   // console.log("files: ", files);
   // console.log("file slice ********############", files.slice(0, (files.length)/2));
 
@@ -72,7 +75,8 @@ app.post("/", upload.any("files"), function(req, res){
     // timeData: [],
     // cleanArray: []
     timeData: timeData,
-    cleanArray: cleanArray
+    cleanArray: cleanArray,
+    timeObject
   });
 })
 

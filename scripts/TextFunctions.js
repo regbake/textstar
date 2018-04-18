@@ -100,7 +100,7 @@ module.exports = {
       dataSet.push(tempArray);
     });
 
-    console.log("From extractTimeData: ", this.convertData(dataSet));
+    // console.log("From extractTimeData: ", this.convertData(dataSet));
     return dataSet;
   },
 
