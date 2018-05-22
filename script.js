@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const TextFunctions = require("./scripts/TextFunctions.js");
 
-//multer shiz
+//multer shizr
 var multer = require("multer");
 var fs = require("fs");
 var storage = multer.memoryStorage()
@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/public/')); //for styling
 
-//define Object.entries
+//define Object.entries polyfill
 if (!Object.entries){
   Object.entries = function( obj ){
     var ownProps = Object.keys( obj ),
